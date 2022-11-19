@@ -26,19 +26,36 @@ public class PerfectNumber {
             total += list.get(i);
         }
         System.out.println(total == sayı ?"Perfect Number":"Not perfect number");
+
+        perfect01(sayı);
     }
     //    ı used here recursive method
     static void perfect(int number) {
-        if (number>j){
+        if (j<number){
             if (number%j == 0){
                 list.add(j);
-                j++;
-                perfect(number);
             }
-            else {
-                j++;
-                perfect(number);
-            }
+            j++;
+            perfect(number);
+        }
+    }
+//    2. way
+    static void perfect01(int number){
+        List<Integer> list1 = new ArrayList<>();
+        for (var i = 1 ; i < number ; i++){
+            if (number%i == 0)
+                list1.add(i);
+        }
+
+        int total = 0;
+        for (var i = 0 ; i < list1.size();i++){
+            total += list1.get(i);
+        }
+        if (number == total){
+            System.out.println("Perfect Number ");
+        }
+        else {
+            System.out.println("Not perfect number ");
         }
     }
 }
