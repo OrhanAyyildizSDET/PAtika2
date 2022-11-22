@@ -9,6 +9,20 @@ public class Fibonacci {
         int num = scanner.nextInt();
         fibo(num);
         fibo01(num);
+        System.out.println();
+        System.out.println("========================================================================");
+//        3. perfect way
+        int n, i=1, j=1, count=0,temp=0;
+        Scanner input=new Scanner(System.in);
+        System.out.print("Please enter the number of elements in Fibonacci Sequence: ");
+        n= input.nextInt();
+        System.out.print("The result: ");
+        do {
+            System.out.print(temp + " ");
+            temp += i;
+            i= temp- i;
+            count++;
+        }while(count!=n);
     }
 //    1. way ı used 3 variables to change my values into each others
     static void fibo(int number){
