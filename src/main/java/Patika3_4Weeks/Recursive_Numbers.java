@@ -15,6 +15,7 @@ public class Recursive_Numbers {
     public static void main(String[] args) {
         int[] numbers = {15, 1, 99, 7, 7, -22, 11, 2, -49, 52,11,7,15,2,2,2};
         HashMap<Integer,Integer> map = new HashMap<Integer, Integer>();
+        //ı used hashmap and flag as value,so ı need unique key for write bu not need unique value
         for (var i = 0; i < numbers.length; i++) {
             int flag = 0;
             for (var j = i ; j < numbers.length ; j++){
@@ -22,6 +23,7 @@ public class Recursive_Numbers {
                     flag++;
                 }
             }
+//ı used if method because ı dont want to change my recursive numbers value again and again
             if (!map.containsKey(numbers[i])){
                 map.put(numbers[i],flag );
             }
